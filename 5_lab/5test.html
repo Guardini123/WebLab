@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>5_lab</title>
+</head>
+<body>
+    <header>
+        <h1>Тест на знание велосипедов</h1>
+        <h2 class="zag">При прохождении теста внимательно читайте вопрос. Ваше время неограничено!</h2>
+    </header>
+    <main>
+        <form name="quiz" class="quiz" id="quiz" action="javascript:check();">
+            <br>   
+            <!-- информация о пользователе -->
+            <h3>Расскажите нам немного о себе :)</h3>
+            <fieldset>
+                <legend><h4>Контакты</h4></legend>
+                <p>
+                    <label for="name">Укажите имя:</label>
+                    <input id="name" type= "text" placeholder="Ваше имя?" required autofocus>
+                </p>
+                <p>
+                    <label for="email">Укажите почту:</label>
+                    <input id="email" type= "email" placeholder="Ваша почта?" required>
+                </p>
+                <p>
+                    <label for="phone">Укажите телефон:</label>
+                    <input id="phone" type= "tel"  placeholder="Ваш телефон?" required pattern="+7[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    <label style="margin-left: 15px;" for="phone">+7***-***-****</label>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend><h4>Личная информация</h4></legend>
+                <p>
+                    <label for="col">Ваш любимый цвет:</label>
+                    <input id="col" type= "color" value="#ffffff">
+                </p>
+                <p>
+                    <label for="num">Сколько конфет вы можете съесть за раз?</label>
+                    <input id="num" type= "number"  value="8" min="0" max="9000" step="2" >
+                </p>
+                <p>
+                    <label for="ran">Ваш вес(кг):</label>
+                    <input oninput="weightout.value=(weightran.value)" id="weightran" type= "range" min="50" max="120" value="70" step="1">
+                    <br><br>
+                    <label>Ваш вес равен:</label>
+                    <output id="weightout">70</output> килограммов
+                </p>
+                <p>
+                    <label for="pol">Укажите ваш пол:</label>
+                    <input id="polm" type= "radio" name="pol1" value="Женский" checked> Женский
+                    <input id="polj" type= "radio" name="pol1" value="Мужской"> Мужской
+                </p>
+                <p>
+                    <label for="dr">Дата рождения:</label>
+                    <input id="dr" max="2020-05-01" type= "date" value="2020-05-01">
+                </p>
+                <fieldset>
+                    <legend><h4>Интересы</h4></legend>
+                    <p>Спорт: <input type="checkbox" id="myCheck" onclick="CheckInterests()"></p>
+                    <p id="ttext" style="display:none">
+                        <input name="interes" value="Легкая атлетика" id="ttext" type="checkbox">Легкая атлетика<br>
+                        <input name="interes" value="Бокс" id="ttext" type="checkbox">Бокс<br>
+                        <input name="interes" value="Настольный теннис" id="ttext" type="checkbox">Настольный теннис<br>
+                        <input name="interes" value="Футбол" id="ttext" type="checkbox">Футбол<br>
+                    </p>
+                    <p>Катание на велосипеде: <input type="checkbox" id="myCheck2" onclick="CheckRiding()"></p>
+                    <p id="ttext1" style="display:none;">
+                        <input name="interes1" value="Классическая" id="ttext1" type="checkbox">Кросскантри
+                        <br>
+                        <input name="interes1" value="Попса" id="ttext1" type="checkbox">Даунхилл
+                        <br>
+                        <input name="interes1" value="Рэпчик" id="ttext1" type="checkbox">Циклокросс
+                        <br>
+                        <input name="interes1" value="Рок" id="ttext1" type="checkbox">Стрит
+                        <br>
+                    </p>
+                    </fieldset>
+            </fieldset>
+
+
+            <!-- сам тест -->
+            <br>
+            <h3>Приступим к тесту!</h3>
+            <fieldset>
+                <legend><h4>Вопрос 1</h4></legend>
+                <p>Какой ширины покрышка у полу-фет-байка?</p>
+                <input name="vopros1" value="no" id="value1" type="radio"> 2,2 <br>
+                <input name="vopros1" value="no" id="value2" type="radio"> 4,8 <br>
+                <input name="vopros1" value="yes" id="value3" type="radio"> 2,8 <br>
+                <input name="vopros1" value="no" id="value4" type="radio"> 2,6 <br>
+            </fieldset>
+
+            <fieldset>
+            <legend><h4> Вопрос 2 </h4></legend>
+            <p>3 - 1 = ...</p>
+            <p>3 - 2 = ...</p>
+            <input name="vopross" value="yes" id="val1" type="checkbox">1<br>
+            <input name="vopross" value="yes" id="val2" type="checkbox">2<br>
+            <input name="vopross" value="no" id="val3" type="checkbox">3<br>
+            <input name="vopross" value="no" id="val4" type="checkbox">4<br>
+            </fieldset>
+
+            <fieldset>
+            <legend><h4> Вопрос 3 </h4></legend>
+            <p>Введите правильный ответ(цифру): 2 + 2 = ...</p>
+
+            <input name="vopros3" id="vap3" type="text"><br>
+            </fieldset>
+            <fieldset>
+            <legend><h4> Вопрос 4 </h4></legend>
+            <p>Кто проживает на дне океана?</p>
+
+            <input name="vopros4" id="vap4" type="text"><br>
+            </fieldset>
+            <fieldset>
+            <legend><h4> Вопрос 5</h4></legend>
+            <p>Пронумеруйте в правильном порядке цвета флага России. Верхний цвет флага соответствует цифре 1, нижний - 3.</p>
+
+            <div   style="width: 20px;
+            height: 20px;
+            background: red;
+            border-width: medium;
+            border-color: black;
+            border-style: solid;
+            margin: 5px;
+            float: left;"></div><input name="vopr1" style="margin-top:10px; margin-left: 5px;" id="colo1 type= "text" size=1>
+            <br><br>
+            <div id="colo" style="width: 20px;
+            height: 20px;
+            background: white;
+            border-width: medium;
+            border-color: black;
+            border-style: solid;
+            margin: 5px;
+            float: left;"></div><input  name="vopr2" style="margin-top:10px;margin-left: 5px;" id="colo" type= "text" size=1>
+            <br><br>
+            <div id="colo" style="width: 20px;
+            height: 20px;
+            background: blue;
+            border-width: medium;
+            border-color: black;
+            border-style: solid;
+            margin: 5px;
+            float: left;"></div><input  name="vopr3" style="margin-top:10px;margin-left: 5px;" id="colo" type= "text" size=1>
+            </fieldset>
+            <br>
+            <input value="submitе" type="submit">
+        </form>
+    </main>
+</body>
+</html>
+
+
+
+
+    
+
+
+
+<script>
+ function check()
+ {
+   let str=["Spongebob","spongebob","Губка боб","губка боб"];
+   let number = [3,1,2];
+  var answ5 ="губка боб";
+  var answ4 = "4";
+  let arrmusic =[];
+  let arrsport= [];
+  var yes=0;
+  var noo =0;
+  var yess=0;
+  var otvet="";
+  var choice;
+  var choice1="";
+  var choice11="";
+  var yesss=0;
+  var v4 = "";
+    var v5 = "";
+    for(var z=1; z<=3; z++)
+    {
+        var int6 = document.forms['quiz'].elements['vopr'+z];
+        if(int6.value == number[z-1])
+          {
+            yesss++
+          }
+    }
+    if(yesss==3){yes++}
+  var int4 = document.forms['quiz'].elements['vopros3'];
+  var int5 = document.forms['quiz'].elements['vopros4'];
+  v4=int4.value;
+  v5=int5.value;
+  if(answ4==v4){yes++}
+  for(var i=0;i<=str.length;i++)
+  {
+    if(str[i]==v5)
+    {
+      yes++
+      break;
+    }
+  }
+  var polll = document.forms['quiz'].elements['vopross'];
+  for (var l=0; l<polll.length; l++)
+  {
+    if (polll[l].checked)
+    {
+      choice11=polll[l].value;
+    }
+      if (choice11=="yes") {yess++}
+      if (choice11=="no") {noo++}
+
+        choice11="";
+
+
+
+   }  if((yess==2)&&(noo==0))  {yes++;}
+   var int1 = document.forms['quiz'].elements['interes'];
+   for (var j=0; j<int1.length; j++)
+   {
+     if (int1[j].checked)
+     {
+       arrsport.push(int1[j].value);
+     }
+   }
+   var int2 = document.forms['quiz'].elements['interes1'];
+   for (var j=0; j<int2.length; j++)
+   {
+     if (int2[j].checked)
+     {
+       arrmusic.push(int2[j].value);
+     }
+   }
+   var poll = document.forms['quiz'].elements['pol1'];
+   for (var j=0; j<poll.length; j++)
+   {
+     if (poll[j].checked)
+     {
+       choice1=poll[j].value;
+     }
+   }
+
+ var q = document.forms['quiz'].elements['vopros1'];
+  for (var i=0; i<q.length; i++)
+  {
+    if (q[i].checked)
+    {
+      choice=q[i].value;
+    }
+  }
+  if (choice=="yes") {yes++;}
+
+
+ switch (true) {
+
+ case (yes==2): otvet="оценка 3";break;
+ case (yes==3): otvet="оценка 3";break;
+ case (yes==4): otvet="оценка 4";break;
+ case (yes==5): otvet="оценка 5";break;
+ default: otvet="очень плохо";break;
+ }
+ alert(document.getElementById("name").value+", Ваш результат: "+yes+"-"+otvet+"\n"+"Результаты не отправлены на вашу почту: "+document.getElementById("email").value+"\n"+"Ваш телефон: "+document.getElementById("phone").value+" зарегестрирован на сайте. "+"\n"+"Ваш цвет глаз "+document.getElementById("col").value+"\n"+"Ваш вес: "+document.getElementById("num").value+"\n"+"Ваш рост: "+document.getElementById("out").value+"\n"+"Ваш пол: " + choice1 +"\n"+ "День рождения :"+document.getElementById("dr").value+"\n"+"Вам нравится следующие виды спорта: " + arrsport+"\n"+"Вам нравится следующая музыка: " + arrmusic);
+ }
+
+
+ function CheckInterests() {
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck");
+  // Get the output text
+  var text = document.getElementById("ttext");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
+
+
+
+function CheckRiding() {
+ // Get the checkbox
+ var checkBox = document.getElementById("myCheck2");
+ // Get the output text
+ var text = document.getElementById("ttext1");
+
+ // If the checkbox is checked, display the output text
+ if (checkBox.checked == true){
+   text.style.display = "block";
+ } else {
+   text.style.display = "none";
+ }
+}
+</script>

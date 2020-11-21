@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 120%;
+}
+
+header{
+    background-color: #63C9EB;
+    padding: 15px;
+}
+
+label{
+    width: 150px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+form{
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+h1, h2{
+    text-align: center;
+}
