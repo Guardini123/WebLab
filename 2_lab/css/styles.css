@@ -1,0 +1,161 @@
+body{
+	margin: 0;
+	color: red;
+	font: 40px Arial, Helvetica, sans-serif;
+}
+
+body::selection{
+	background: #000;
+	color:#BDBDBD;
+}
+
+h1{
+	color: blue;
+	font-family: 'Roboto', sans-serif;;
+	font-weight: 100;
+}
+
+p{
+	text-indent: 50px;
+	color: green;
+	font-family: 'Roboto', sans-serif;;
+	font-weight: 300;
+}
+
+p::first-line {
+    color: blue;
+    text-transform: uppercase;
+}
+
+p::first-letter{
+	color:red;
+}
+
+p.can-select::selection{
+	background: #000;
+	color:#BDBDBD;
+}
+
+
+header{
+    background-color: #0078FF;
+    padding-bottom: 30px; 
+}
+
+header .header-wrapper{
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header img[src="img/logo.jpg"] {
+    position: relative;
+    top: 20px;  
+}
+
+header img+.site-menu {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+header .site-menu li{
+    display: inline-block;
+}
+
+header .site-menu li > a{
+    font-size: 20px;
+    color: #fff;
+}
+
+header .site-menu li > a:visited
+{
+	color: #00FF96;
+}
+
+header .site-menu li > a:hover
+{
+	color: #000;
+}
+
+header .site-menu li > a:focus
+{
+	background-color: #F8F8F8;
+	color: #000;
+}
+
+
+
+
+
+main{
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+
+main ol{
+	list-style-type: hiragana;
+}
+
+
+#list-on-page-wrapper{
+	color: #7200FF;
+}
+
+ul.list-on-page,
+ul.list-on-page ul{
+	list-style: none;
+}
+
+ul.list-on-page{
+	background-color: #F00;
+}
+
+ul.list-on-page ul{
+	background-color: #000;
+}
+
+
+
+
+.items-wrapper {
+    left: : 70px;
+    position: relative;
+}
+
+.item {
+    display: inline-block;
+    width: 300px;
+    background-color: rgb(240, 152, 70);
+    margin: 30px 50px 50px 30px;
+    top: 70px;
+}
+
+.item-name {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.item-count {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+}
+
+
+
+
+
+.important-text{
+	word-spacing: 20px;
+	background: red;
+}
