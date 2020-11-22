@@ -93,7 +93,7 @@ function checkTest()
     resultWrapper.style.display = "block";
     var formResult = document.getElementById("test-result");
     formResult.innerText = result;
-    formResult.scrollIntoView();
+    resultWrapper.scrollIntoView();
 }
 
 function checkForm()
@@ -181,7 +181,7 @@ function checkForm()
     resultWrapper.style.display = "block";
     var formResult = document.getElementById("form-result");
     formResult.innerText = result;
-    formResult.scrollIntoView();
+    resultWrapper.scrollIntoView();
 }
 
 
