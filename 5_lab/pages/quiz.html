@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="../js/scripts.js"></script>
+    <title>Тест</title>
+</head>
+<body>
+    <header>
+        <h1>Тест на знание велосипедов</h1>
+    </header>
+    <main>
+        <section>
+            <div class="main-wrapper">
+                <h2>При прохождении теста внимательно читайте вопрос. Ваше время неограничено!</h2>
+                <p>Помните, всё что вы здесь скажите, может быть сохранено в памяти вашего браузера!</p>
+            </div>
+        </section>
+
+        <form name="quiz" class="quiz" id="quiz" action="javascript:checkTest();">
+            <!-- сам тест -->
+            <br>
+            <h3>Приступим!</h3>
+
+            <fieldset>
+                <legend>
+                    <h4>Вопрос 1</h4>
+                </legend>
+                <p>Какой ширины покрышка у полу-фет-байка?</p>
+                <input name="vopros1" value="no" type="radio"> 2,2 
+                <br>
+                <input name="vopros1" value="no" type="radio"> 4,8 
+                <br>
+                <input name="vopros1" value="yes" type="radio"> 2,8 
+                <br>
+                <input name="vopros1" value="no" type="radio"> 2,6 
+                <br>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>
+                    <h4>Вопрос 2</h4>
+                </legend>
+                <p>Отметьте существущие типы амортизаторов:</p>
+                <input name="vopros2" value="yes" type="checkbox"> Воздушный 
+                <br>
+                <input name="vopros2" value="yes" type="checkbox"> Пружинно-маслянный 
+                <br>
+                <input name="vopros2" value="no" type="checkbox"> Эластикомерный 
+                <br>
+                <input name="vopros2" value="no" type="checkbox"> Бумажный 
+                <br>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>
+                    <h4>Вопрос 3</h4>
+                </legend>
+                <p>Введите правильный ответ(цифру): Сколько колёс у велосипеда?</p>
+                <input name="vopros3" type="number">
+                <br>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>
+                    <h4>Вопрос 4</h4>
+                </legend>
+                <p>Фирма, которую все ненавидят, но на которой все катаются?</p>
+                <input name="vopros4" type="text"><br>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>
+                    <h4>Вопрос 5</h4>
+                </legend>
+                <p>Пронумеруйте в правильном порядке крутость велосипеда! Самый крутой - 3, самый плохой - 1.</p>
+                <p style="margin: 0;">Norco</p>
+                <input name="vopros5.1" type="number" size=1>
+                <p style="margin: 0;">Specialized</p>
+                <input  name="vopros5.2" type="number" size=1>
+                <p style="margin: 0;">GT</p>
+                <input  name="vopros5.3" type="number" size=1>
+            </fieldset>
+            <div class="buttonSubmitWrapper main-wrapper">
+                <input class="buttonSubmit" value="Готово!" type="submit">
+            </div>
+        </form>
+
+        <div id="result-container" style="display: none;" >
+            <section>
+                <div class="main-wrapper">
+                        <h3>Выдохните :) Вот ваши результаты</h3>
+                </div>
+            </section>
+
+            <form>
+                <fieldset>
+                    <legend>
+                        <h4>Ну что ж ...</h4>
+                    </legend>
+                    <p id="test-result">
+                            
+                    </p>
+                </fieldset>
+            </form>
+
+            <div class="buttonSubmitWrapper main-wrapper">
+                    <a class="buttonSubmit" href="quiz.html">Пройти заного!</a>
+                    <a class="buttonSubmit" href="../index.html">Заполнить новую форму!</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="main-wrapper">
+            <p>Этот сайт посвящается всем велосипедам мира!</p>
+            <h3>Roll all day and be happy!</h3>
+        </div>
+    </footer>
+</body>
+</html>

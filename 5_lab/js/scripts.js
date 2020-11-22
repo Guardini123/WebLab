@@ -1,8 +1,8 @@
-function check()
+function checkTest()
 {
     var points = 0;
     var mark = "";
-    var choicePol="";
+    
 
     // вопрос номер 1
     var vopros1 = document.forms['quiz'].elements['vopros1'];
@@ -68,29 +68,76 @@ function check()
     }
 
 
-    
+
+    switch (true) {
+        case (points == 2): mark = "3"; break;
+        case (points == 3): mark="3"; break;
+        case (points == 4): mark="4"; break;
+        case (points == 5): mark="5"; break;
+        default: mark = "плохо"; break;
+    }
+
+
+    var result = "";
+    result = "Ваш результат: " + points + " , и оценка: " + mark + ".\n";
+    if(points > 3){
+        result += "Поздравляем! Вы справились с тестом :D ";
+    } else if (points > 1){
+        result += "Не хорошо, но и не ужасно! Может, стоит попробовать снова ...";
+    } else {
+        result += "Сделаю вид, что не видел этого ...";
+    }
+
+    //вставить result на страницу
+    var resultWrapper = document.getElementById("result-container");
+    resultWrapper.style.display = "block";
+    var formResult = document.getElementById("test-result");
+    formResult.innerText = result;
+    formResult.scrollIntoView();
+}
+
+function checkForm()
+{
+
     //собрать все ответы про спорт
     let arrSport = [];
     var interesSport = document.forms['quiz'].elements['interesSport'];
-    for (var i = 0; i < interesSport.length; i++)
+    var sport = document.getElementById("sportsCheck");
+    if (sport.checked == false) 
     {
-        if (interesSport[i].checked)
+        arrSport = [];
+    } else {
+        for (var i = 0; i < interesSport.length; i++)
         {
-            arrSport.push(interesSport[i].value);
+            if (interesSport[i].checked)
+            {
+                arrSport.push(" " + interesSport[i].value);
+            }
         }
     }
+
+
 
     //собрать все ответы про катание
     let arrRiding = [];
     var interesRiding = document.forms['quiz'].elements['interesRiding'];
-    for (var i = 0; i < interesRiding.length; i++)
+    var riding = document.getElementById("ridingCheck");
+    if (riding.checked == false) 
     {
-        if (interesRiding[i].checked)
+        arrRiding = [];
+    } else {
+        for (var i = 0; i < interesRiding.length; i++)
         {
-            arrRiding.push(interesRiding[i].value);
+            if (interesRiding[i].checked)
+            {
+                arrRiding.push(" " + interesRiding[i].value);
+            }
         }
     }
     
+
+
+    var choicePol="";
     //собрать ответ по полу
     var pol = document.forms['quiz'].elements['pol'];
     for (var i = 0; i < pol.length; i++)
@@ -101,24 +148,40 @@ function check()
         }
     }
 
-    switch (true) {
-        case (points == 2): mark = "оценка 3"; break;
-        case (points == 3): mark="оценка 3"; break;
-        case (points == 4): mark="оценка 4"; break;
-        case (points == 5): mark="оценка 5"; break;
-        default: mark = "очень плохо"; break;
-    }
 
-    alert(document.getElementById("name").value + ", Ваш результат: " + mark + "\n" +
-        "Результаты не отправлены на вашу почту: " + document.getElementById("email").value + "\n" +
+    var result = "";
+    result = document.getElementById("name").value + ", " +
+        "ваша почта: " + document.getElementById("email").value + "\n" +
         "Ваш телефон: " + document.getElementById("phone").value + ".\n" +
         "Ваш любимый цвет: " + document.getElementById("color").value + "\n" +
         "Вы можете съесть конфет: " + document.getElementById("num").value + "\n" +
         "Ваш вес(кг): "+document.getElementById("weightout").value + "\n" +
         "Ваш пол: " + choicePol +"\n" +
-        "День рождения : " + document.getElementById("dr").value + "\n" +
-        "Вам нравится следующие виды спорта: " + arrSport + "\n" +
-        "Из велосипедного спорта вам интересно: " + arrRiding);
+        "День рождения : " + document.getElementById("dr").value + "\n";
+
+    if(arrSport.length == 0){
+        result += "Вы не увлекаетесь спортом. \n";
+    } 
+    else 
+    {
+        result += "Из спорта вам нравится:" + arrSport + "\n";
+    }
+
+    if(arrRiding.length == 0){
+        result += "Вы не увлекаетесь велосипедами. :( \n"
+    } 
+    else 
+    {
+        result += "Из велосипедного спорта вам интересно:" + arrRiding;
+    }
+
+
+    //вставить result на страницу
+    var resultWrapper = document.getElementById("result-container");
+    resultWrapper.style.display = "block";
+    var formResult = document.getElementById("form-result");
+    formResult.innerText = result;
+    formResult.scrollIntoView();
 }
 
 

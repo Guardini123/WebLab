@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>5_lab</title>
+    <script src="js/scripts.js"></script>
+    <title>О себе</title>
 </head>
 <body>
     <header>
         <h1>Тест на знание велосипедов</h1>
-        <h2 class="zag">При прохождении теста внимательно читайте вопрос. Ваше время неограничено!</h2>
+        
     </header>
     <main>
-        <form name="quiz" class="quiz" id="quiz" action="javascript:check();">
+        <section>
+            <div class="main-wrapper">
+                <h3>Расскажите нам немного о себе :)</h3>
+                <p>При ответе на вопрос можете немного приукрасить )</p>
+                <p>Но помните, всё что вы здесь скажите, может быть сохранено в памяти вашего браузера!</p>
+            </div>
+        </section>
+
+
+
+        <form name="quiz" class="quiz" id="quiz" action="javascript:checkForm();">
             <br>   
             <!-- информация о пользователе -->
-            <h3>Расскажите нам немного о себе :)</h3>
             <fieldset>
                 <legend>
                     <h4>Контакты</h4>
@@ -91,81 +100,44 @@
                     </p>
                     </fieldset>
             </fieldset>
-
-
-            <!-- сам тест -->
-            <br>
-            <h3>Приступим к тесту!</h3>
-
-            <fieldset>
-                <legend>
-                    <h4>Вопрос 1</h4>
-                </legend>
-                <p>Какой ширины покрышка у полу-фет-байка?</p>
-                <input name="vopros1" value="no" type="radio"> 2,2 
-                <br>
-                <input name="vopros1" value="no" type="radio"> 4,8 
-                <br>
-                <input name="vopros1" value="yes" type="radio"> 2,8 
-                <br>
-                <input name="vopros1" value="no" type="radio"> 2,6 
-                <br>
-            </fieldset>
-
-
-            <fieldset>
-                <legend>
-                    <h4>Вопрос 2</h4>
-                </legend>
-                <p>Отметьте существущие типы амортизаторов:</p>
-                <input name="vopros2" value="yes" type="checkbox"> Воздушный 
-                <br>
-                <input name="vopros2" value="yes" type="checkbox"> Пружинно-маслянный 
-                <br>
-                <input name="vopros2" value="no" type="checkbox"> Эластикомерный 
-                <br>
-                <input name="vopros2" value="no" type="checkbox"> Бумажный 
-                <br>
-            </fieldset>
-
-
-            <fieldset>
-                <legend>
-                    <h4>Вопрос 3</h4>
-                </legend>
-                <p>Введите правильный ответ(цифру): Сколько колёс у велосипеда?</p>
-                <input name="vopros3" type="number">
-                <br>
-            </fieldset>
-
-
-            <fieldset>
-                <legend>
-                    <h4>Вопрос 4</h4>
-                </legend>
-                <p>Фирма, которую все ненавидят, но на которой все катаются?</p>
-                <input name="vopros4" type="text"><br>
-            </fieldset>
-
-
-            <fieldset>
-                <legend>
-                    <h4>Вопрос 5</h4>
-                </legend>
-                <p>Пронумеруйте в правильном порядке крутость велосипеда! Самый крутой - 3, самый плохой - 1.</p>
-                <p style="margin: 0;">Norco</p>
-                <input name="vopros5.1" type="number" size=1>
-                <p style="margin: 0;">Specialized</p>
-                <input  name="vopros5.2" type="number" size=1>
-                <p style="margin: 0;">GT</p>
-                <input  name="vopros5.3" type="number" size=1>
-            </fieldset>
-            <br>
-            <div class="buttonSubmitWrapper">
-                <input class="checkForm" value="Готово!" type="submit">
+            <div class="buttonSubmitWrapper main-wrapper">
+                <input class="buttonSubmit" value="Вроде всё верно!" type="submit">
             </div>
         </form>
+
+
+
+        <div id="result-container" style="display: none;">
+
+            <section>
+                <div class="main-wrapper">
+                        <h3>Проверьте, пожалуйста, свои ответы!</h3>
+                        <p>Если что-то не так, возможности исправить потом не будет!</p>
+                </div>
+            </section>
+
+            <form>
+                <fieldset>
+                    <legend>
+                        <h4>Данные с формы</h4>
+                    </legend>
+                    <p id="form-result">
+                            
+                    </p>
+                </fieldset>
+            </form>
+
+            <div class="buttonSubmitWrapper main-wrapper">
+                    <a class="buttonSubmit" href="pages/quiz.html">Да, всё верно!</a>
+            </div>
+        </div>
     </main>
+    <footer>
+        <div class="main-wrapper">
+            <p>Этот сайт посвящается всем велосипедам мира!</p>
+            <h3>Roll all day and be happy!</h3>
+        </div>
+    </footer>
 </body>
-<script src="js/scripts.js"></script>
+
 </html>
