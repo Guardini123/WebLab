@@ -1,9 +1,9 @@
 var img = new Image();
 img.src = "img.jpg";
-var i = 0;
-  var j = 0;
-  var k = 0;
-  var z = 0;
+var i = 1810;
+var j = 435;
+var k = 0;
+var z = 0;
 
 function draw() {
   var canvas = document.getElementById("canvas");
@@ -19,7 +19,7 @@ function draw() {
     //текст сверху
     ctx.font = "30px Verdana";
     ctx.strokeStyle = "blue";
-    ctx.strokeText("Реклама кошек. Ведь они этого достойны!", 400, 100);
+    ctx.strokeText("Реклама кошек. Ведь они этого достойны!", 500, 100);
 
     //текст снизу
     ctx.font = "15px Arial Black";
@@ -69,34 +69,49 @@ function draw2(){
                       + z 
                       + ')';
 
-    ctx.fillRect (i, j, 50, 45);
+    ctx.fillRect (i, j, 50, 50);
 
     switch(k)
     {
-      case 0:
-        i += 10;
-        if(i == 1820) 
-          k++;
-        break;
-      case 1:
-        j += 10;
-        if(j == 870)
-          k++;
-        break;
-      case 2:
-        i -= 10;
-        if(i == 0)
-          k++;
-        break;
-      case 3:
-        j -= 10;
-        if(j == 0)
-        {
-          k = 0;
-          z+= 25;
-          z = z % 256;
-        }
-        break;
+        case 0:
+            i -= 5;
+            j -= 5;
+            if(j <= 100){ 
+                k++;
+                i = 0;
+                j = 435;
+            }
+            break;
+        case 1:
+            i += 5;
+            j -= 5;
+            if(j <= 100){
+                k++;
+                i = 310;
+                j = 635;
+            }
+            break;
+        case 2:
+            i -= 5;
+            j += 5;
+            if(j >= 800){
+                k++;
+                i = 1510;
+                j = 635;
+            }
+            break;
+        case 3:
+            j += 5;
+            i += 5;
+            if(j >= 800)
+            {
+                k = 0;
+                i = 1810;
+                j = 435;
+                z += 60;
+                z = z % 256;
+            }
+            break;
     }
     window.requestAnimationFrame(draw2);
   }
